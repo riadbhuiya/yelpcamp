@@ -3,10 +3,21 @@
 <a href="/campgrounds/new">Add</a>
 <br>
 
-<ul>
-    <% for (camp of campgrounds) { %>
-        <li>
-            <a href="campgrounds/<%= camp._id %>"><%= camp.title %></a>
-        </li>
-    <% } %>
-</ul>   
+<% for (camp of campgrounds) { %>
+    <div class="card mb-3">
+        <div class="row">
+            <div class="col-md-4">
+                <img src="<%= camp.image %>" alt="" class="img-fluid">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h3><%= camp.title %></h3>
+                    <h5 class="text-black-50"><%= camp.location %></h5>
+                    <p class="card-text"><%= camp.description %></p>
+                    <a class="btn btn-primary" href="campgrounds/<%= camp._id %>">View details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<% } %> 

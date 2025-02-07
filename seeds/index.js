@@ -24,9 +24,7 @@ const seedDB = async () => {
             location: `${cities[r].city}, ${cities[r].state}`,
             price,
             image: `https://picsum.photos/600/400.jpg`,
-            description: `  Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas dolor consequatur esse eos officia quo tempora enim dignissimos quibusdam laudantium fugit iusto similique, soluta at ea nemo mollitia libero non.
-                            Odit, assumenda deleniti ea unde, atque impedit debitis consequatur rerum nobis nisi itaque! Est deserunt officiis id nisi hic nesciunt. Nisi sapiente, obcaecati voluptatibus suscipit molestiae voluptatem quasi tenetur ad?
-                            Laboriosam ratione nihil sed ut nobis sapiente, quo tempora rerum rem iure voluptatum consequuntur atque blanditiis vel numquam aut ullam, incidunt est autem pariatur vitae. Et deserunt debitis vero nemo.`,
+            description: `  Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas dolor consequatur esse eos officia quo tempora enim dignissimos quibusdam laudantium fugit iusto similique, soluta at ea nemo mollitia libero non.`
         })
         //console.log(camp)
         await camp.save()
