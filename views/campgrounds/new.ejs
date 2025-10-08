@@ -3,31 +3,36 @@
 <div class="row">
     <h1 class="text-center mb-5">Add new campground</h1>
     <div class="col-6 offset-3 mb-5">
-        <form action="/campgrounds" method="post">
+        <form action="/campgrounds" method="post" novalidate class="validated-form needs-validation">
 
             <label class="form-label" for="title">Title</label>
             <input class="form-control mb-3" type="text" name="campground[title]" id="title" placeholder="title" required>
+            <div class="valid-feedback">Looks good.</div>
 
             <label class="form-label" for="location">Location</label>
             <input class="form-control mb-3" type="text" name="campground[location]" id="location" placeholder="location" required>
+            <div class="valid-feedback">Looks good.</div>
 
             <label for="image" class="form-label">Image URL</label>
-            <input type="text" class="form-control mb-3" name="campground[image]" id="image" placeholder="image url">
+            <input type="text" class="form-control mb-3" name="campground[image]" id="image" placeholder="image url" required>
+            <div class="valid-feedback">Looks good.</div>
 
             <div class="mb-3">
                 <label class="mb-2" for="price">Campground Price</label>
                 <div class="input-group">
                     <span class="input-group-text" id="price">$</span>
-                    <input type="text" class="form-control" name="campground[price]" placeholder="0.00" id="price" aria-label="price" aria-describedby="price">
+                    <input type="text" class="form-control" name="campground[price]" placeholder="0.00" id="price" aria-label="price" aria-describedby="price" required>
                 </div>
+                <div class="valid-feedback">Looks good.</div>
             </div>
 
             <label class="form-label" for="description">Description</label>
-            <textarea class="form-control mb-3" type="text" name="campground[description]" id="description" placeholder="description"></textarea>
+            <textarea class="form-control mb-3" type="text" name="campground[description]" id="description" placeholder="description" required></textarea>
+            <div class="valid-feedback">Looks good.</div>
 
             <button class="btn btn-primary" type="submit">Add</button>
             <a class="btn btn-danger" href="/campgrounds">Cancel</a>
-
+            
         </form>
     </div>
 </div>
