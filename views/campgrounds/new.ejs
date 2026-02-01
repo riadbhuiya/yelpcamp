@@ -13,8 +13,11 @@
             <input class="form-control mb-3" type="text" name="campground[location]" id="location" placeholder="location" required>
             <div class="valid-feedback">Looks good.</div>
 
-            <input type="file" name="image" multiple>
-
+            <div class="mb-3">
+                <label for="images" class="form-label">Upload images</label>
+                <input class="form-control" type="file" id="image" name="image" multiple>
+            </div>
+            <div class="valid-feedback">Looks good.</div>
             <!-- <label for="image" class="form-label">Image URL</label>
             <input type="text" class="form-control mb-3" name="campground[image]" id="image" placeholder="image url" required>
             <div class="valid-feedback">Looks good.</div> -->

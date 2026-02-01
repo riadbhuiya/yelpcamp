@@ -13,8 +13,10 @@
             <input class="form-control mb-3" type="text" name="campground[location]" id="location" placeholder="location" value="<%= campground.location %>" required>
             <div class="valid-feedback">Looks good.</div>
 
-            <label for="image" class="form-label">Upload Image</label>
-            <input type="file" id="image" name="image" multiple>
+            <div class="mb-3">
+                <label for="images" class="form-label">Upload images</label>
+                <input class="form-control" type="file" id="image" name="image" multiple>
+            </div>
             <div class="valid-feedback">Looks good.</div>
 
             <div class="mb-3">
@@ -23,13 +25,22 @@
                     <span class="input-group-text" id="price">$</span>
                     <input type="text" class="form-control" name="campground[price]" placeholder="0.00" value="<%= campground.price %>" id="price" aria-label="price" aria-describedby="price" required>
                 </div>
-            <div class="valid-feedback">Looks good.</div>
-
+                <div class="valid-feedback">Looks good.</div>
             </div>
 
             <label class="form-label" for="description">Description</label>
             <textarea class="form-control mb-3" type="text" name="campground[description]" id="description" placeholder="description" required><%= campground.description %></textarea>
             <div class="valid-feedback">Looks good.</div>
+
+            <div class="mb-3 d-flex flex-row">
+                <% campground.images.forEach((img, i) => { %>
+                    <img class="img-thumbnail w-25 h-25" src="<%= img.url %>" alt="">
+                    <div class="form-check-inline">
+                        <input id="img-<%= i %>" type="checkbox" name="deleteImages[]" value="<%= img.filename %>">
+                    </div>
+                    <label for="img-<%= i %>">Delete?</label>
+                <% }) %>
+            </div>
 
             <button class="btn btn-info" type="submit">Update</button>
             <a class="btn btn-danger" href="/campgrounds/<%= campground._id %>">Back to campground</a>
